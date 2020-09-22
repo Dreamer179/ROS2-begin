@@ -1,0 +1,61 @@
+source ~/ros2_dashing/install/setup.bash
+. install/setup.bash
+
+****************************************************************************
+https://emanual.robotis.com/docs/en/platform/turtlebot3/ros2_bringup/#bringup
+http://learn.turtlebot.com/
+https://medium.com/@ivangavran/ros-creating-world-file-from-existing-yaml-5b553d31cc53
+https://ubuntu.com/blog/ros-2-command-line-interface
+https://navigation.ros.org/getting_started/index.html#getting-started
+http://wiki.ros.org/navigation/Tutorials/Writing%20A%20Global%20Path%20Planner%20As%20Plugin%20in%20ROS
+https://navigation.ros.org/getting_started/index.html
+https://blog.roverrobotics.com/ros-2-is-it-time-to-switch-tutorial-included/
+https://roboticsbackend.com/ros2-launch-file-example/
+****************************************************************************
+
+
+source /opt/ros/dashing/setup.bash
+
+* Simulate Example 
+ros2 launch nav2_bringup nav2_simulation_launch.py # ros2 launch <package> <launch_file.py> 
+
+*Command ROS2:
+ros2 topic list  #list all topic
+ros2 topic echo /cmd_vel
+ros2 topic echo /scan  #scan data
+ros2 topic echo /chatter #
+
+$ ros2 verb --help
+$ ros2 verb sub-verb -h
+
+Let us see a few examples,
+
+$ ros2 run demo_node_cpp talker
+starts the talker cpp node from the demo_nodes_cpp package.
+
+$ ros2 run demo_node_py listener
+starts the listener python node from the demo_nodes_py package.
+
+$ ros2 topic echo /chatter
+outputs the messages sent from the talker node.
+
+$ ros2 node info /listener
+outputs information about the listener node.
+
+$ ros2 param list
+lists all parameters of every node.
+
+***********************************************************************************
+
+Package:
+	*node:
+	 +topic
+	 +topic
+	 ...
+	*node:
+	 +topic
+	 +topic
+	- launch file: call process from node
+	- URDF file
+
+
